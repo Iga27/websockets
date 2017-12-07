@@ -48,6 +48,7 @@ namespace ConsoleAppForWebSocketExample
            
             ws.ConnectAsync(uri, CancellationToken.None).Wait();
 
+            //look at what browser sends and what servers sends(different colors)
              ws.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(jsonSubscribe)), WebSocketMessageType.Text, true, CancellationToken.None).Wait();
              ws.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(jsonInit)), WebSocketMessageType.Text, true, CancellationToken.None).Wait();
              ws.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(jsonUnsubscribe)), WebSocketMessageType.Text, true, CancellationToken.None).Wait();
